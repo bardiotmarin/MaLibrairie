@@ -1,0 +1,46 @@
+{# Je créé ma structure commune de page (le squelette de page qui
+ sera appliqué sur toutes les pages
+#}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+</head>
+<body>
+
+<header>
+    <nav class="nav">
+        <img class="logo-nav" src="https://cdn.dribbble.com/users/1303634/screenshots/4736402/icon-3.jpg" alt="">
+        <div class="boite-nav">
+            <a href="{{ path("books_list") }}">livre</a>
+            <a href="{{ path("authors_list") }}">Auteur</a>
+            <a href="{{ path("app_logout") }}">LOGOUT</a>
+        </div>
+    </nav>
+</header>
+
+{% block content %}
+{% endblock content %}
+
+<footer>
+    <nav class="nav2">
+        <img class="logo-nav" src="" alt="">
+        <div class="boite-nav">
+            <a href="{{ path("books_list") }}">livre</a>
+            <a href="{{ path("authors_list") }}">Auteur</a>
+            <a href="{{ path("app_logout") }}">LOGOUT</a>
+        </div>
+    </nav>
+</footer>
+
+
+
+
+</body>
+</html>

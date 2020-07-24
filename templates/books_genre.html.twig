@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <h2>Les style de ma biblio : </h2>
+
+    <main>
+        {% for book in books %}
+
+            <article>
+                <h2>{{ book.title }}</h2>
+                <p>Genre : {{ book.genre.name }}</p>
+            </article>
+
+        {% endfor %}
+    </main>
+
+{% endblock content %}

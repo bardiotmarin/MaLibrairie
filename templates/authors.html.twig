@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <main>
+    {% for author in authors %}
+        <h1>Firstname:{{ author.firstname }}</h1>
+        <h2>LastName:{{ author.lastname }}</h2></a>
+        <p>Birthday{{ author.birthdate |date("m/d/Y") }}</p>
+        <p>deathdate {{ author.deathdate|date("m/d/Y") }}</p>
+        <a href="{{ path("books_solo", {"id":author.id}) }}">Voir l'auteur</a>
+    {% endfor %}
+    </main>
+{% endblock content %}

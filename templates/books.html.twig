@@ -1,0 +1,19 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <main>
+        {% for book in books %}
+
+            <article>
+                <h2>{{ book.title }}</h2>
+                <p>Genre : {{ book.genre.name }}</p>
+                <p> RESUME : {{ book.resume }}</p>
+                <a href="{{ path("books_solo", {"id":book.id}) }}">Voir l'auteur</a>
+            </article>
+
+        {% endfor %}
+    </main>
+
+{% endblock content %}

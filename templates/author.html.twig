@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <main>
+        <h1>Firstname:{{ authors.firstname }}</h1>
+        <h2>LastName:{{ authors.lastname }}</h2>
+        <p>Birthday{{ authors.birthdate |date("m/d/Y") }}</p>
+        <p>deathdate {{ authors.deathdate|date("m/d/Y") }}</p>
+
+    </main>
+{% endblock content %}

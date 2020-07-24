@@ -1,0 +1,44 @@
+{% extends "admin/admin_base.html.twig" %}
+{% block content %}
+    {# j'affiche mon formulaire avec la fonction twig form, et en parametre le formulaire envoyé
+       depuis le controleur
+    #}
+
+    {# pour rendre directement tout le formulaire, on utilise la fonction twig form() #}
+
+    {#
+        pour plutôt décomposer le formulaire et avoir la main sur chaque input / label
+        on utilise les fonctions form_start() et form_end pour la balise form,
+        puis form_widget() et form_label() sur chacun des champs.
+       Je peux utiliser en second argument de ces fonction un objet 'attr' pour
+       gérer les classes, id etc des inputs
+     #}
+    {{ form_start(bookInsert) }}
+
+    {{ form_widget(bookInsert.title, {'attr': {'class': ''}}) }}
+    {{ form_label(bookInsert.title) }}
+    {{ form_errors(bookInsert.title)}}
+
+
+    {{ form_widget(bookInsert.bookCover) }}
+    {{ form_label(bookInsert.bookCover) }}
+    {{ form_errors(bookInsert.bookCover)}}
+
+    {{ form_widget(bookInsert.resume) }}
+    {{ form_label(bookInsert.resume) }}
+    {{ form_errors(bookInsert.resume)}}
+
+    {{ form_widget(bookInsert.nbpages) }}
+    {{ form_label(bookInsert.nbpages) }}
+    {{ form_errors(bookInsert.nbpages)}}
+
+    {{ form_widget(bookInsert.genre) }}
+    {{ form_label(bookInsert.genre) }}
+    {{ form_errors(bookInsert.genre)}}
+
+    {{ form_widget(bookInsert.submit) }}
+
+
+    {{ form_end(bookInsert) }}
+
+{% endblock content%}

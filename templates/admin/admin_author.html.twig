@@ -1,0 +1,16 @@
+{% extends "admin/admin_base.html.twig" %}
+
+{% block content%}
+    <main>
+        {% for author in author %}
+
+            <h1>Firstname:{{ author.firstname }}</h1>
+            <h2>LastName:{{ author.lastname }}</h2></a>
+            <p>Birthday{{ author.birthdate |date("m/d/Y") }}</p>
+            <p>deathdate {{ author.deathdate|date("m/d/Y") }}</p>
+            <a href="{{ path("admin_author_delete", {"id":author.id}) }}">efface moi </a>
+            <a href="{{ path("Admin_insert_author") }}">ajoute un auteur </a>
+            <a href="{{ path("admin_update_author",{"id":author.id}) }}">modifie cette auteur </a>
+        {% endfor %}
+    </main>
+{% endblock content %}
